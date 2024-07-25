@@ -8,16 +8,12 @@ import { viteCommonjs } from '@originjs/vite-plugin-commonjs';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(),'.env')
-  console.log(env, 1111, process.cwd())
+  const env = loadEnv(mode, process.cwd())
+  console.log(loadEnv,mode,env, 111122, process.cwd())
   return {
 
     resolve: {
       alias: [
-        {
-          find: /^~/,
-          replacement: ''
-        },
         {
           find: '@',
           replacement: path.resolve(__dirname, 'src')
@@ -56,7 +52,7 @@ export default defineConfig(({ mode }) => {
         inject: {
           data: {
             title: 'test',
-            BASE_URL: '/public'
+            BASE_URL: '/public/'
           }
         }
       })
@@ -65,7 +61,7 @@ export default defineConfig(({ mode }) => {
     base: './',
     server: {
       open: true, //自动打开浏览器
-      port: 1567,
+      port: 8086,
       proxy: {
         '/api': {
           // target: 'http://192.168.16.82:8078',
@@ -102,8 +98,8 @@ export default defineConfig(({ mode }) => {
       exports: {}
     },
     // envPrefix:'ENV_'
-    // optimizeDeps: {
-    //   exclude:["lodash-es"]
-    // }
+    optimizeDeps: {
+      exclude:[]
+    }
   }
 })
