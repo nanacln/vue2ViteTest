@@ -1,0 +1,10 @@
+{
+  "name":"nana",
+  "gender":"female",
+  "friends":["luck","paul"],
+  "address":{
+    "city":"beijing",
+    "street":"haidian"
+  },
+  "age":32
+}
