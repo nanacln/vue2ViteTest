@@ -50,7 +50,7 @@ export default {
     test,
   },
   created() {
-    console.log(import.meta.env,7777777,process.env);
+    console.log(import.meta.env,7777777);
   },
   mounted() {
     const dom1 = document.getElementById("huabi");

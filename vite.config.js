@@ -27,6 +27,7 @@ export default defineConfig(({ mode }) => {
           replacement: path.resolve(__dirname, 'src/components')
         }
       ],
+      // 可以省略的后缀名   在项目中使用可以不加这个后缀名
       extensions: [
         '.mjs',
         '.js',
@@ -93,10 +94,10 @@ export default defineConfig(({ mode }) => {
     build: {
       outDir: 'dist',
     },
-    define: {
-      'process.env': {},
-      exports: {}
-    },
+    // define: {
+    //   'process.env': {},
+    //   exports: {}
+    // },
     // envPrefix:'ENV_'
     optimizeDeps: {
       exclude:[]
